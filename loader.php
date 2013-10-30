@@ -1,8 +1,8 @@
 <?php
 /**
  *   Plugin Name: BP Groups Suggestions
- *   Author: lenasterg
- *   Author URL: http://lenasterg.wordpress.com
+  *   Author: lenasterg
+ *   Author URI: http://lenasterg.wordpress.com
  *   Description: Adds a suggestion section to BuddyPress groups. based on  BP Groups Suggest Widget of buddydev.com
  *   Version: 1.0
  *  License:  GNU General Public License 3.0 or newer (GPL) http://www.gnu.org/licenses/gpl.html
