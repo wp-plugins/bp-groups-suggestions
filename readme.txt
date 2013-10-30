@@ -43,7 +43,7 @@ Default setting is groups active the last 4 weeks, which means BP_GROUP_SUGGESTI
 BP_GROUP_SUGGESTIONS_GROUPS_LAST_ACTIVITY_INTERVAL_TYPE='WEEK'. 
 Both consts are defined at the beginning of loader.php file.
 
-=Can I extend/impove the plugin=
+= Can I extend/impove the plugin =
 Sure. Actually, I would be happy if someone gives a hand to make the best of the suggested groups idea. Various things (brainstorming) which need to be fixed are available on /ideas.txt
 
 == Screenshots ==
