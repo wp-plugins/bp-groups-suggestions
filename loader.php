@@ -6,7 +6,7 @@
  *   Description: Adds a suggestion section to BuddyPress groups. based on  BP Groups Suggest Widget of buddydev.com
  *   Version: 1.0
  *  License:  GNU General Public License 3.0 or newer (GPL) http://www.gnu.org/licenses/gpl.html
- * Last Updated: October 24, 2013
+ * Last Updated: October 30, 2013
  * Description: Group suggestion section 
  * 
  */
