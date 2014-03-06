@@ -1,6 +1,6 @@
 <?php
 /**
- * 
+ *
  */
 // Exit if accessed directly
 if (!defined('ABSPATH'))
@@ -18,11 +18,12 @@ class BPGroupSuggestionWidgetLs extends WP_Widget {
     }
 
     /**
-     * 
+     *
      * @global type $bp
      * @param type $args
      * @param type $instance
      * @return type
+     * @version 2, 6/3/2014, performance enhancement
      */
     function widget($args, $instance) {
         global $bp;
@@ -34,16 +35,17 @@ class BPGroupSuggestionWidgetLs extends WP_Widget {
         echo $args['before_widget'];
         if (!empty($title)) :
             echo $args['before_title'] . $title . $args['after_title'];
-        endif;
-        if (BPGroupSuggest::count_possible_groups() == '0') :
-            ?>
+        endif ;
+        $countpossible = BPGroupSuggest::count_possible_groups() ;
+        if ( $countpossible == '0' ) :
+?>
                         <div id="message" class="info"><?php _e("We don't have enough details to suggest a group yet.", self::TEXTDOMAIN); ?><br>
                 <?php _e('Try make some more friends, first', self::TEXTDOMAIN); ?></div>
             <?php
         else :
             BPGroupSuggest::suggestions_list($instance['max']);
-            if (BPGroupSuggest::count_possible_groups() > $instance['max']) :
-                ?>
+            if ( $countpossible > $instance[ 'max' ] ) :
+            ?>
                                 <div  role="navigation"><a href="<?php echo bp_get_groups_slug(); ?>/?scope=lssuggestions" ><?php _e('See more suggestions', self::TEXTDOMAIN); ?></a></div>
                 <?php
             endif;

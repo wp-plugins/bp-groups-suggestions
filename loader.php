@@ -6,11 +6,11 @@
  *   Description: Adds a suggestion section to BuddyPress groups. based on  BP Groups Suggest Widget of buddydev.com
  *   Version: 1.0
  *  License:  GNU General Public License 3.0 or newer (GPL) http://www.gnu.org/licenses/gpl.html
- * Last Updated: October 30, 2013
+ * Last Updated: March 6, 2014
  * Description: Group suggestion section 
  * 
  */
-define('BP_GROUP_SUGGESTIONS_LS_VERSION', '1');
+define('BP_GROUP_SUGGESTIONS_LS_VERSION', '1.1');
 define('BP_GROUP_SUGGESTIONS_GROUPS_LAST_ACTIVITY_INTERVAL', '4');
 define('BP_GROUP_SUGGESTIONS_GROUPS_LAST_ACTIVITY_INTERVAL_TYPE', 'WEEK');
 

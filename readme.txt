@@ -2,8 +2,8 @@
 Contributors: lenasterg
 Tags: buddypress, groups, suggested groups, suggested groups widget
 Requires at least:  WP 3.5, BuddyPress 1.7
-Tested up to: 3.7.1, BuddyPress 1.8.1
-Stable tag: 1.0
+Tested up to: 3.7.1, BuddyPress 1.9.2
+Stable tag: 1.1
 License: GNU General Public License 3.0 or newer (GPL) http://www.gnu.org/licenses/gpl.html
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=Q4VCLDW4BFW6L
 
@@ -54,6 +54,9 @@ Sure. Actually, I would be happy if someone gives a hand to make the best of the
 4. Message on "Suggested groups" tab on Groups Directory page, in case none group is suggested
 
 == Changelog ==
+
+= 1.1 =
+* Speed enhancement on the widget
 
 = 1.0 =
 Initial version
