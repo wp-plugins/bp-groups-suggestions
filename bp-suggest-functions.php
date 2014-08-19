@@ -1,7 +1,7 @@
 <?php
 
 /**
- * 
+ *
  * @param type $users_id
  * @return type
  */
@@ -23,7 +23,7 @@ function friends_for_group_suggestion_ls($users_id) {
 add_filter('add_users_for_group_search', 'friends_for_group_suggestion_ls');
 
 /**
- * 
+ *
  * @param type $description
  * @return type
  */
@@ -64,10 +64,11 @@ add_filter('add_excluded_groups_suggestions', 'my_groups_to_exclude');
 
 /**
  * /**
- * Return array with group_ids based on users_id and excluded_group_ids which are recently active. 
+ * Return array with group_ids based on users_id and excluded_group_ids which are recently active.
  * Recently active means 'last_activity' date is < BP_GROUP_SUGGESTIONS_GROUPS_LAST_ACTIVITY_INTERVAL . " " . BP_GROUP_SUGGESTIONS_GROUPS_LAST_ACTIVITY_INTERVAL_TYPE
  * Both BP_GROUP_SUGGESTIONS_GROUPS_LAST_ACTIVITY_INTERVAL and BP_GROUP_SUGGESTIONS_GROUPS_LAST_ACTIVITY_INTERVAL_TYPE are defined in loader.php file
- * @version 3.0, 23/10/2013
+ * @version 4, 7/3/2014, added array_filter
+ * v3.0, 23/10/2013
  * @author stergatu
  * @todo Add count friends per group
  * @global type $wpdb
@@ -84,7 +85,10 @@ function get_users_groups($users_ids = array(), $excluged_groups_ids = array()) 
         $users_groups_sql = "SELECT DISTINCT g.id, count(m.user_id) as friends FROM  {$bp->groups->table_name} g
         Inner Join {$bp->groups->table_name_members} AS m ON m.group_id = g.id
         Inner Join {$bp->groups->table_name_groupmeta} as t ON g.id = t.group_id
-            WHERE  (g.status='public' OR g.status='private') ";
+            WHERE  (g.status='public' OR g.status='private') " ;
+
+        $users_ids = array_filter( $users_ids , 'strlen' ) ;
+        $excluged_groups_ids = array_filter( $excluged_groups_ids , 'strlen' ) ;
         if (count($users_ids) > 0) {
             $users_list = "(" . join(",", $users_ids) . ")";
             $users_groups_sql .="  AND m.user_id in {$users_list} AND is_confirmed= 1 ";
@@ -94,7 +98,7 @@ function get_users_groups($users_ids = array(), $excluged_groups_ids = array()) 
             $users_groups_sql .= "AND g.id not in {$not_these_groups}";
         }
         if (BP_GROUP_SUGGESTIONS_GROUPS_LAST_ACTIVITY_INTERVAL > 0) {
-            $users_groups_sql .= " AND t.meta_key =  'last_activity' 
+            $users_groups_sql .= " AND t.meta_key =  'last_activity'
                 AND
                 t.meta_value > DATE_SUB(CURDATE(), INTERVAL " . BP_GROUP_SUGGESTIONS_GROUPS_LAST_ACTIVITY_INTERVAL . " " . BP_GROUP_SUGGESTIONS_GROUPS_LAST_ACTIVITY_INTERVAL_TYPE . ")";
         }
@@ -107,9 +111,9 @@ function get_users_groups($users_ids = array(), $excluged_groups_ids = array()) 
 }
 
 /**
- * 
+ *
  * @param type $group
- * @author stergatu 
+ * @author stergatu
  *  @since  21/10/2013
  *  @version 1, 21/10/2013
  */
@@ -121,7 +125,7 @@ function bp_group_remove_suggestion_button($group = false) {
  * Creates the remove suggestion button
  * @param type $group
  * @return boolean
- *  @author stergatu 
+ *  @author stergatu
  *  @since  21/10/2013
  *  @version 1, 21/10/2013
  *  @global type $groups_template
@@ -204,17 +208,17 @@ function bp_gs_ls_is_hidden_message() {
 }
 
 /**
- * 
+ *
  * @param type $group_id
  * @param type $user_id
  */
 function bpgsls_remove_hidden_suggestion_and_cache($group_id, $user_id) {
     $hidden_from_suggestions = (array) BPGroupSuggest::get_hidden($user_id);
-    
+
    //Group is  hidden from suggestions
     if (in_array($group_id, $hidden_from_suggestions)) {
         $hidden_from_suggestions = array_diff($hidden_from_suggestions, array($group_id));
-        update_user_meta($user_id, 'hidden_group_suggestions', $hidden_from_suggestions);  
+        update_user_meta($user_id, 'hidden_group_suggestions', $hidden_from_suggestions);
         wp_cache_delete('get_users_groups_for_user' . $user_id);
     }
 }

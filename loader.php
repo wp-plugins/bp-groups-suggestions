@@ -4,14 +4,14 @@
   *   Author: lenasterg
  *   Author URI: http://lenasterg.wordpress.com
  *   Description: Adds a suggestion section to BuddyPress groups. based on  BP Groups Suggest Widget of buddydev.com
- *   Version: 1.0
+ *   Version: 1.2
  *  License:  GNU General Public License 3.0 or newer (GPL) http://www.gnu.org/licenses/gpl.html
- * Last Updated: March 6, 2014
- * Description: Group suggestion section 
- * 
+ * Last Updated: August 19, 2014
+ * Description: Group suggestion section
+ *
  */
-define('BP_GROUP_SUGGESTIONS_LS_VERSION', '1.1');
-define('BP_GROUP_SUGGESTIONS_GROUPS_LAST_ACTIVITY_INTERVAL', '4');
+define( 'BP_GROUP_SUGGESTIONS_LS_VERSION' , '1.2' ) ;
+define( 'BP_GROUP_SUGGESTIONS_GROUPS_LAST_ACTIVITY_INTERVAL' , '8' ) ;
 define('BP_GROUP_SUGGESTIONS_GROUPS_LAST_ACTIVITY_INTERVAL_TYPE', 'WEEK');
 
 function bpgrsugls_loader() {
