@@ -3,7 +3,7 @@ Contributors: lenasterg
 Tags: buddypress, groups, suggested groups, suggested groups widget
 Requires at least:  WP 3.5, BuddyPress 1.7
 Tested up to: 3.7.1, BuddyPress 2.0.1
-Stable tag: 1.2
+Stable tag: 1.3
 License: GNU General Public License 3.0 or newer (GPL) http://www.gnu.org/licenses/gpl.html
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=Q4VCLDW4BFW6L
 
