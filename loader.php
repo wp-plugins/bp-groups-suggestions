@@ -1,16 +1,17 @@
 <?php
+
 /**
- *   Plugin Name: BP Groups Suggestions
-  *   Author: lenasterg
- *   Author URI: http://lenasterg.wordpress.com
- *   Description: Adds a suggestion section to BuddyPress groups. based on  BP Groups Suggest Widget of buddydev.com
- *   Version: 1.2
- *  License:  GNU General Public License 3.0 or newer (GPL) http://www.gnu.org/licenses/gpl.html
- * Last Updated: August 19, 2014
+ *  Plugin Name: BP Groups Suggestions
+ *  Author: lenasterg
+ *  Author URI: http://lenasterg.wordpress.com
+ *  Description: Adds a suggestion section to BuddyPress groups. based on  BP Groups Suggest Widget of buddydev.com
+ *  Version: 1.3
+ * License:  GNU General Public License 3.0 or newer (GPL) http://www.gnu.org/licenses/gpl.html
+ * Last Updated: September 23, 2014
  * Description: Group suggestion section
  *
  */
-define( 'BP_GROUP_SUGGESTIONS_LS_VERSION' , '1.2' ) ;
+define( 'BP_GROUP_SUGGESTIONS_LS_VERSION', '1.3' );
 define( 'BP_GROUP_SUGGESTIONS_GROUPS_LAST_ACTIVITY_INTERVAL' , '8' ) ;
 define('BP_GROUP_SUGGESTIONS_GROUPS_LAST_ACTIVITY_INTERVAL_TYPE', 'WEEK');
 
@@ -37,6 +38,7 @@ function bpgrsugls_loader() {
 
         require_once( dirname(__FILE__) . '/bp-group-suggest.php' );
     }
+    bpgrsugls_textdomain();
 }
 
 add_action('bp_include', 'bpgrsugls_loader');
@@ -56,5 +58,3 @@ function bpgrsugls_textdomain() {
         return;
     }
 }
-
-add_action('bp_loaded', 'bpgrsugls_textdomain');

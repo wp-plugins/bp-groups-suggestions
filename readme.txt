@@ -56,6 +56,9 @@ Sure. Actually, I would be happy if someone gives a hand to make the best of the
 
 == Changelog ==
 
+= 1.3 =
+* Minor fix for BP_GROUP_SUGGESTIONS_LS_DIR notice
+
 = 1.2 =
 * Added two more option in widget: Show join group button and limit group's title charachers in widget (See screenshot 5).
 * Fix Greek translation
