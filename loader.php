@@ -2,7 +2,7 @@
 
 /**
  *  Plugin Name: BP Groups Suggestions
- *  Author: lenasterg
+ *  Author: lenasterg, NTS on cti.gr
  *  Author URI: http://lenasterg.wordpress.com
  *  Description: Adds a suggestion section to BuddyPress groups. based on  BP Groups Suggest Widget of buddydev.com
  *  Version: 1.3
